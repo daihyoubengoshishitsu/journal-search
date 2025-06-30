@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ジャーナルトピックス CSVアップロード</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 ジャーナルトピック登録</h1>
+            <p>CSVファイルを処理・登録します</p>
+        </div>
+        
+        <div class="upload-section" id="uploadArea">
+            <input type="file" id="csvFile" class="file-input" accept=".csv" />
+            <div>
+                <h3>📁 CSVファイルを選択</h3>
+                <p>ここにファイルをドラッグ&ドロップするか、<br>クリックしてファイルを選択してください</p>
+                <button class="upload-btn" onclick="selectFile()">
+                    📂 ファイルを選択
+                </button>
+                <p><small>対応形式: CSV (.csv) | 最大ファイルサイズ: 10MB</small></p>
+            </div>
+        </div>
+
+        <div class="file-info" id="fileInfo">
+            <h4>✅ 選択されたファイル:</h4>
+            <div id="fileName"></div>
+            <div id="fileSize"></div>
+            <div id="filePreview"></div>
+            <button class="upload-btn" id="uploadBtn" onclick="uploadFile()" style="margin-top: 15px;">
+                🚀 アップロード開始
+            </button>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <h4>🔄 処理中...</h4>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0%</div>
+            <p><small id="progressDetail">ファイルを準備中...</small></p>
+        </div>
+
+        <div class="message" id="messageArea"></div>
+
+        <div class="csv-format">
+            <h4>📋 注意：CSVフォーマット</h4>
+            <p>CSVファイルの項目名は以下で統一してください：</p>
+            <div class="csv-example">
+                <strong>列名:</strong> go,bango,topics,saibansho,hanketsu_date
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📖 使用方法</h3>
+            <ol>
+                <li>上記のフォーマットでCSVファイルを準備</li>
+                <li>「ファイルを選択」ボタンでCSVファイルを選択</li>
+                <li>ファイル内容を確認後「アップロード開始」をクリック</li>
+                <li>処理完了まで待機（数分程度）</li>
+            </ol>
+        </div>
+
+        <div class="nav-links">
+            <a href="/search">🔍 検索ページへ</a>
+            <a href="/">🏠 ホームへ</a>
+        </div>
+    </div>
+
+    <script src="upload.js"></script>
+</body>
+</html>
